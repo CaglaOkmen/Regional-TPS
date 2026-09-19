@@ -161,6 +161,7 @@ if __name__ == '__main__':
         'Genetic_Time_s': gen_times
     })
     
-    df.to_csv("regional_tsp_results.csv", index=False)
-    print("\nVeriler 'regional_tsp_results.csv' dosyasına kaydedildi.")
+    os.makedirs("outputs", exist_ok=True)
+    df.to_csv(os.path.join("outputs", "regional_tsp_results.csv"), index=False)
+    print("\nVeriler 'outputs/regional_tsp_results.csv' dosyasına kaydedildi.")
     comparison(heur_sums, heur_times, ortool_sums, ortool_times, gen_sums, gen_times)

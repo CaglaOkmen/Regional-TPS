@@ -74,5 +74,7 @@ def draw_map(G, regions, paths_dict, lengths_dict, radius, name):
      '''
     m.get_root().html.add_child(folium.Element(legend_html))
 
-    filename = f"{name}.html"
+    import os
+    os.makedirs(os.path.join("outputs", "maps"), exist_ok=True)
+    filename = os.path.join("outputs", "maps", f"{name}.html")
     m.save(filename)

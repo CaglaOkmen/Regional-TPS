@@ -18,7 +18,10 @@ def comparison(heur_sums, heur_times, ortool_sums, ortool_times, gen_sums, gen_t
     plt.legend()
     plt.grid(True, alpha=0.3)
 
-    plt.savefig("karsilastirma_mesafe.png", dpi=150)
+    import os
+    os.makedirs("outputs", exist_ok=True)
+
+    plt.savefig(os.path.join("outputs", "karsilastirma_mesafe.png"), dpi=150)
 
     # Zaman Grafiği
     plt.figure(figsize=(10, 6))
@@ -35,7 +38,7 @@ def comparison(heur_sums, heur_times, ortool_sums, ortool_times, gen_sums, gen_t
     plt.xticks(x_axis)
     plt.grid(True, which="both", linestyle='--', linewidth=0.5, alpha=0.7)
 
-    plt.savefig("karsilastirma_zaman.png", dpi=150)
+    plt.savefig(os.path.join("outputs", "karsilastirma_zaman.png"), dpi=150)
 
     # Ortool ile diğer metotların karşılaştırması (y=x)
     plt.figure(figsize=(8, 8))
@@ -60,4 +63,4 @@ def comparison(heur_sums, heur_times, ortool_sums, ortool_times, gen_sums, gen_t
     plt.legend()
     plt.grid(True, alpha=0.4)
     plt.tight_layout()
-    plt.savefig("karsilastirma_dagilim.png", dpi=150)
+    plt.savefig(os.path.join("outputs", "karsilastirma_dagilim.png"), dpi=150)
